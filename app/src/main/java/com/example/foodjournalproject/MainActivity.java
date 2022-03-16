@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.passcode_page);
+        setContentView(R.layout.homepage);
 
         // Start of User Entry Page Code
 

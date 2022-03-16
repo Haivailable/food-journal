@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Food Journal"
+        android:icon="@drawable/ic_baseline_food_bank_24"
+        android:id="@+id/food_journal"/>
+    <item android:title="Exercise Journal"
+        android:icon="@drawable/ic_baseline_directions_run_24"
+        android:id="@+id/exercise_journal"/>
+    <item android:title="To-do"
+        android:icon="@drawable/ic_baseline_list_24"
+        android:id="@+id/todo"/>
+</menu>
