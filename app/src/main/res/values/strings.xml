@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">foodjournalProject</string>
+    <string name="breakfastText">Breakfast</string>
+    <string name="lunchText">Lunch</string>
+    <string name="dinnerText">Dinner</string>
+    <string name="extraNotesText">Notes</string>
 </resources>
