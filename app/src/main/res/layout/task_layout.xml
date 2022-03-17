@@ -11,13 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp">
+
         <CheckBox
             android:id="@+id/todoCheckbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tool:text="This is an Sample Taks inside the application."
+            android:buttonTint="@android:color/holo_green_dark"
             android:paddingStart="8dp"
-            android:buttonTint="@android:color/holo_green_dark"/>
+            tool:text="This is an Sample Taks inside the application." />
     </RelativeLayout>
 
 

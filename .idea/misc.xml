@@ -4,15 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2891344259598512" />
-        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.21481481481481482" />
-        <entry key="app/src/main/res/layout/homepage.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.20108695652173914" />
+        <entry key="app/src/main/res/layout/fragment_exercise_journal.xml" value="0.19202898550724637" />
+        <entry key="app/src/main/res/layout/homepage.xml" value="0.16392089089536221" />
         <entry key="app/src/main/res/layout/journal_entry_screen.xml" value="0.20969202898550723" />
-        <entry key="app/src/main/res/layout/new_task.xml" value="0.21481481481481482" />
+        <entry key="app/src/main/res/layout/new_task.xml" value="0.20108695652173914" />
         <entry key="app/src/main/res/layout/passcode_page.xml" value="0.20969202898550723" />
         <entry key="app/src/main/res/layout/recipe_search_page.xml" value="0.20969202898550723" />
         <entry key="app/src/main/res/layout/single_recipe_page.xml" value="0.20969202898550723" />
-        <entry key="app/src/main/res/layout/task_layout.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/user_entry_page.xml" value="0.20969202898550723" />
+        <entry key="app/src/main/res/layout/task_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/user_entry_page.xml" value="0.29243487132842494" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.23958333333333334" />
       </map>
     </option>
   </component>

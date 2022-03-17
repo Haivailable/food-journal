@@ -4,4 +4,6 @@
     <string name="lunchText">Lunch</string>
     <string name="dinnerText">Dinner</string>
     <string name="extraNotesText">Notes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
