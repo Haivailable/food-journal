@@ -33,7 +33,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements DialogCloseListener{
 
-    private RecyclerView tasksRecyclerView;
+
     private ToDoAdapter tasksAdapter;
     private FloatingActionButton fab;
     private EditText ed;
