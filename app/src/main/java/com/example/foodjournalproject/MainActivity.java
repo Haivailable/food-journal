@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
             return true;
         });
         //----------Code for checklist FOR PETER---------------//
-        ArrayList<String> entries = new ArrayList<>();
+        /**ArrayList<String> entries = new ArrayList<>();
         Button clickButton = (Button) findViewById(R.id.add_item);
         //FIGURE OUT HOW TO GET THE STRING INFORMATION FROM THE EDITTEXT
         EditText text_edit = (EditText) findViewById(R.id.text_edit);
@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
                 text_edit.setText(text_edit.getText() + clickButton.getText().toString());
 
            }
-        });
+        });*/
+
     }
     @Override
     public void handleDialogClose(DialogInterface dialog){
