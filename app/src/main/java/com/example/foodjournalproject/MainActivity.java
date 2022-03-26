@@ -86,33 +86,6 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
 
            }
         });
-
-        /** PETER UR STUFF ISN'T WORKING - MESSAGE FROM SHABBIR
-        getSupportActionBar().hide();
-        db = new DatabaseHandler(this);
-        db.openDatabase();
-
-        taskList = new ArrayList<>();
-
-        tasksRecyclerView = findViewById(R.id.tasksRecyclerView);
-        tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        tasksAdapter = new ToDoAdapter(db, this);
-        tasksRecyclerView.setAdapter(tasksAdapter);
-
-        fab = findViewById(R.id.fab);
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(tasksAdapter));
-        itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
-
-        taskList = db.getAllTasks();
-        Collections.reverse(taskList);
-        tasksAdapter.setTasks(taskList);
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AddNewTask.newInstance().show(getSupportFragmentManager(), AddNewTask.TAG);
-            }
-        });**/
     }
     @Override
     public void handleDialogClose(DialogInterface dialog){
@@ -128,4 +101,6 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
     }
+
+
 }
