@@ -7,7 +7,7 @@
 
 
     <Button
-        android:id="@+id/placeHolderButton"
+        android:id="@+id/backButton_UserEntryPage"
         android:layout_width="107dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -23,7 +23,7 @@
         android:layout_marginStart="8dp"
         android:text="Exercise"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/placeHolderButton" />
+        app:layout_constraintTop_toBottomOf="@+id/backButton_UserEntryPage" />
 
     <EditText
         android:id="@+id/exMultiLineText"
