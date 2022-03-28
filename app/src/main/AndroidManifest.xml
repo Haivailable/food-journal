@@ -20,6 +20,9 @@
         <activity android:name=".MainActivity" android:exported="true">
         </activity>
 
+        <activity android:name=".FoodJournalEntry" android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

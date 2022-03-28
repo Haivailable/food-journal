@@ -1,12 +1,20 @@
 package com.example.foodjournalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.lang.reflect.GenericArrayType;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +67,16 @@ public class FoodJournalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.homepage, container, false);
+        View v = inflater.inflate(R.layout.homepage, container, false);
+        FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
+
+        fab.setOnClickListener(view -> {
+            Toast.makeText(getActivity().getApplicationContext(), "Test", Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(getActivity(), FoodJournalEntry.class);
+            startActivity(intent);
+        });
+
+        return v;
     }
 }
