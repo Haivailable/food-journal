@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class FoodJournal extends AppCompatActivity
+public class FoodJournalEntry extends AppCompatActivity
 {
     private EditText breakfastText;
     private EditText lunchText;
