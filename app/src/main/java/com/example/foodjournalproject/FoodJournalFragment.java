@@ -71,8 +71,6 @@ public class FoodJournalFragment extends Fragment {
         FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
 
         fab.setOnClickListener(view -> {
-            Toast.makeText(getActivity().getApplicationContext(), "Test", Toast.LENGTH_LONG).show();
-
             Intent intent = new Intent(getActivity(), FoodJournalEntry.class);
             startActivity(intent);
         });

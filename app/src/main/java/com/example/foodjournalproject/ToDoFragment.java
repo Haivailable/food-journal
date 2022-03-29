@@ -7,6 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +64,28 @@ public class ToDoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.task_layout, container, false);
+        View v = inflater.inflate(R.layout.task_layout, container, false);
+
+        ArrayList<String> entries = new ArrayList<>();
+        Button clickButton = (Button) v.findViewById(R.id.add_item);
+        EditText text_edit = (EditText) v.findViewById(R.id.text_edit);
+        //this is when the button is clicked on task_layout.xml
+        clickButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Do what you want with the click here***
+                String entry = text_edit.getText().toString();
+                text_edit.setVisibility(View.VISIBLE);
+                entries.add(entry);
+                System.out.println(entries.toString());
+                text_edit.setText("");
+
+                //MAKE SURE TO ADD ITEMS TO THE LISTVIEW IN THIS ONCLICK
+
+
+            }
+        });
+
+        return v;
     }
 }
