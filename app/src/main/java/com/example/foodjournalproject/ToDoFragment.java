@@ -79,15 +79,16 @@ public class ToDoFragment extends Fragment {
         clickButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Do what you want with the click here***
+                //This adds the user's input into the textbox into an arraylist when the button is hit
                 String entry = text_edit.getText().toString();
                 text_edit.setVisibility(View.VISIBLE);
                 entries.add(entry);
                 System.out.println(entries.toString());
                 text_edit.setText("");
-                //MAKE SURE TO ADD ITEMS TO THE LISTVIEW IN THIS ONCLICK
+                //This will add the user's input into the listview below it
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, entries);
                 list.setAdapter(arrayAdapter);
+                //This is a method created in order to delete items from list and arraylist
             list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> a, View v, int position, long id) {
