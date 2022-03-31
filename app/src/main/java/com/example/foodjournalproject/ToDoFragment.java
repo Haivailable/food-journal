@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -69,6 +71,7 @@ public class ToDoFragment extends Fragment {
         ArrayList<String> entries = new ArrayList<>();
         Button clickButton = (Button) v.findViewById(R.id.add_item);
         EditText text_edit = (EditText) v.findViewById(R.id.text_edit);
+        ListView list = (ListView) v.findViewById(R.id.listview);
         //this is when the button is clicked on task_layout.xml
         clickButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,10 +82,9 @@ public class ToDoFragment extends Fragment {
                 entries.add(entry);
                 System.out.println(entries.toString());
                 text_edit.setText("");
-
                 //MAKE SURE TO ADD ITEMS TO THE LISTVIEW IN THIS ONCLICK
-
-
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, entries);
+                list.setAdapter(arrayAdapter);
             }
         });
 
