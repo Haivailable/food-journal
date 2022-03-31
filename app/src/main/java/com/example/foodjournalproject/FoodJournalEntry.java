@@ -12,11 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class FoodJournalEntry extends AppCompatActivity
 {
+    private EditText date;
     private EditText breakfastText;
     private EditText lunchText;
     private EditText dinnerText;
     private EditText userNotes;
     private Button backNSave;
+
 
     public static final String shrd_Prefs = "shrdPreference";
     public static final String bf_Text = "BreakFast Text";
@@ -35,6 +37,7 @@ public class FoodJournalEntry extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_entry_page);
 
+        date = (EditText) findViewById(R.id.dateinput);
         breakfastText = (EditText)  findViewById(R.id.bfMultiLineText);
         lunchText = (EditText)  findViewById(R.id.lMultiLineText);
         dinnerText = (EditText) findViewById(R.id.dMultiLineText);

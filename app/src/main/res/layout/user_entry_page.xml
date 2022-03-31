@@ -6,14 +6,36 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Date"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButton_UserEntryPage" />
+
+    <EditText
+        android:id="@+id/dateinput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="dd/mm/yyyy"
+        android:inputType="date"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextView"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <TextView
         android:id="@+id/breakfastTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/breakfastText"
         android:textSize="23sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backButton_UserEntryPage" />
+        app:layout_constraintTop_toBottomOf="@+id/dateinput" />
 
     <EditText
         android:id="@+id/bfMultiLineText"
