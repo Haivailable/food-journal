@@ -54,7 +54,7 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
-        android:text="Enter your reps"
+        android:hint="Enter your reps"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/repsTextView" />
 
@@ -76,7 +76,7 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
-        android:text="Enter your sets"
+        android:hint="Enter your sets"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setsTextView" />
 
