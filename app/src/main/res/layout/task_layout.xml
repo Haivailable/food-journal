@@ -17,18 +17,18 @@
             android:layout_width="262dp"
             android:layout_height="match_parent"
             android:id="@+id/text_edit"
-            android:hint="Enter the item" />
+            android:hint="Enter the task" />
 
         <Button
             android:id="@+id/add_item"
-            android:layout_width="120dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Add Item"
+            android:text="Add Task"
             android:textAlignment="center"
             android:textColor="#FFFFFF" />
     </LinearLayout>
     <ListView
-        android:layout_width="434dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listview"
         android:layout_marginBottom="12dp" />

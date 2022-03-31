@@ -1,5 +1,7 @@
 package com.example.foodjournalproject;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -85,6 +88,23 @@ public class ToDoFragment extends Fragment {
                 //MAKE SURE TO ADD ITEMS TO THE LISTVIEW IN THIS ONCLICK
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, entries);
                 list.setAdapter(arrayAdapter);
+            list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+                    AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
+                    adb.setTitle("Delete?");
+                    adb.setMessage("Are you sure you want to delete");
+                    final int positionToRemove = position;
+                    adb.setNegativeButton("Cancel", null);
+                    adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            entries.remove(positionToRemove);
+                            arrayAdapter.notifyDataSetChanged();
+                        }});
+                    adb.show();
+                }
+            });
             }
         });
 
