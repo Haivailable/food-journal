@@ -4,45 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.ItemTouchHelper;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.ClipData;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.foodjournalproject.Adapter.ToDoAdapter;
-import com.example.foodjournalproject.Model.ToDoModel;
-import com.example.foodjournalproject.Utils.DatabaseHandler;
+
 import com.example.foodjournalproject.databinding.ActivityMainBinding;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.Collections;
+
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements DialogCloseListener{
+public class MainActivity extends AppCompatActivity{
 
 
-    private ToDoAdapter tasksAdapter;
-    private FloatingActionButton fab;
-    private EditText ed;
-    private Button adding_items;
-    private ListView item_list;
-    private ArrayList<String> values = new ArrayList<String>();
-    private ArrayAdapter<String> adapter;
-    private List<ToDoModel> taskList;
-    private DatabaseHandler db;
+
+
 
     ActivityMainBinding binding;
     @Override
@@ -67,17 +44,7 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
 
             return true;
         });
-        //----------Code for checklist FOR PETER---------------//
-        /**
-         * */
 
-    }
-    @Override
-    public void handleDialogClose(DialogInterface dialog){
-        taskList = db.getAllTasks();
-        Collections.reverse(taskList);
-        tasksAdapter.setTasks(taskList);
-        tasksAdapter.notifyDataSetChanged();
     }
 
     private void replaceFragment (Fragment fragment){
