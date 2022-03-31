@@ -1,5 +1,6 @@
 package com.example.foodjournalproject;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -50,11 +51,16 @@ public class FoodJournalEntry extends AppCompatActivity
                 dinnerText.setText(dinnerText.getText().toString());
                 userNotes.setText(userNotes.getText().toString());
                 saveData();
+                finish();
+
             }
         });
 
         loadData();
         updateEditTexts();
+
+
+
     }
 
     public void saveData()
