@@ -99,6 +99,7 @@ public class ToDoFragment extends Fragment {
                     adb.setNegativeButton("Cancel", null);
                     adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
+                        //Remove 
                         public void onClick(DialogInterface dialog, int which) {
                             entries.remove(positionToRemove);
                             arrayAdapter.notifyDataSetChanged();
