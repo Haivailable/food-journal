@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable/box_layout_input.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/ic_baseline_add.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/layout/activity_exercise_entry.xml" value="0.15208333333333332" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2891344259598512" />
         <entry key="app/src/main/res/layout/activity_passcode.xml" value="0.18659420289855072" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.20108695652173914" />
