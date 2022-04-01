@@ -1,20 +1,27 @@
 package com.example.foodjournalproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.lang.reflect.GenericArrayType;
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,6 +70,14 @@ public class FoodJournalFragment extends Fragment {
         }
     }
 
+    //Arraylists that will be necessary
+    ListView listView;
+    ArrayList<String> dates = new ArrayList<>();
+    ArrayList<String> breakfasts = new ArrayList<>();
+    ArrayList<String> lunches = new ArrayList<>();
+    ArrayList<String> dinners = new ArrayList<>();
+    ArrayList<String> allNotes = new ArrayList<>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -75,6 +90,74 @@ public class FoodJournalFragment extends Fragment {
             startActivity(intent);
         });
 
+        listView = (ListView) v.findViewById(R.id.journalListView);
+        for (int i = 0; i<FoodJournalEntry.journal.size();i++){
+            dates.add(FoodJournalEntry.journal.get(i).getDate());
+            breakfasts.add(FoodJournalEntry.journal.get(i).getBfText());
+            lunches.add(FoodJournalEntry.journal.get(i).getlText());
+            dinners.add(FoodJournalEntry.journal.get(i).getdText());
+            allNotes.add(FoodJournalEntry.journal.get(i).getnText());
+        }
+        //TESTING STUFF RN
+        System.out.println("WE ARE IN THE FRAGMENT");
+        System.out.println(dates);
+        System.out.println(breakfasts);
+        System.out.println(lunches);
+        System.out.println(dinners);
+        System.out.println(allNotes);
+
+        FoodAdapter adapter = new FoodAdapter(getActivity(), dates,breakfasts,lunches,dinners,allNotes);
+        listView.setAdapter(adapter);
+
         return v;
+    }
+
+    class FoodAdapter extends ArrayAdapter<String>{
+        Context context;
+        ArrayList<String> rDate;
+        ArrayList<String> rBreakfast;
+        ArrayList<String> rLunch;
+        ArrayList<String> rDinner;
+        ArrayList<String> rNotes;
+
+        FoodAdapter (Context c, ArrayList<String> date, ArrayList<String> breakfast, ArrayList<String> lunch, ArrayList<String> dinner, ArrayList<String> notes){
+            super(c, R.layout.list_food, R.id.date, date);
+            this.context=c;
+            this.rDate=date;
+            this.rBreakfast=breakfast;
+            this.rLunch=lunch;
+            this.rDinner=dinner;
+            this.rNotes=notes;
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            LayoutInflater layoutInflater = (LayoutInflater)getActivity().getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View row = layoutInflater.inflate(R.layout.list_food,parent,false);
+            TextView journalDate = row.findViewById(R.id.date);
+            TextView journalBF = row.findViewById(R.id.breakfastTextView);
+            TextView journalLunch = row.findViewById(R.id.lunchTextView);
+            TextView journalDin = row.findViewById(R.id.dinnerTextView);
+            TextView journalNotes = row.findViewById(R.id.notesTextView);
+
+            //Now set the resources on the views
+            journalDate.setText(rDate.get(position));
+            journalBF.setText(rBreakfast.get(position));
+            journalLunch.setText(rLunch.get(position));
+            journalDin.setText(rDinner.get(position));
+            journalNotes.setText(rNotes.get(position));
+
+            //TESTING AGAIN
+            System.out.println("WE ARE IN THE FOOD ADAPTER");
+            System.out.println(rDate.get(position));
+            System.out.println(rBreakfast.get(position));
+            System.out.println(rLunch.get(position));
+            System.out.println(rDinner.get(position));
+            System.out.println(rNotes.get(position));
+
+
+            return super.getView(position, convertView, parent);
+        }
     }
 }

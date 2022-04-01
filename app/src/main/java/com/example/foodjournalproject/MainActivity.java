@@ -17,17 +17,13 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
 
-
-
-
-
     ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        replaceFragment(new FoodJournalFragment()); //WILL NEED TO CHANGE THIS TO THE PASSCODE PAGE LATER. ONLY OPENING ON FOODJOURNAL PAGE TEMPORARILY.
+        replaceFragment(new FoodJournalFragment());
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch(item.getItemId()){
                 case(R.id.food_journal):

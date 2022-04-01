@@ -1,5 +1,7 @@
 package com.example.foodjournalproject;
 
+import java.util.ArrayList;
+
 public class FoodJournalNotes {
     private String date;
     private String bfText;
