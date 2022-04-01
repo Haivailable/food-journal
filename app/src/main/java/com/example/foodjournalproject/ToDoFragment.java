@@ -70,7 +70,7 @@ public class ToDoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.task_layout, container, false);
-
+        //Create an arraylist to store entries and find the buttons and textbox in display
         ArrayList<String> entries = new ArrayList<>();
         Button clickButton = (Button) v.findViewById(R.id.add_item);
         EditText text_edit = (EditText) v.findViewById(R.id.text_edit);
@@ -99,7 +99,7 @@ public class ToDoFragment extends Fragment {
                     adb.setNegativeButton("Cancel", null);
                     adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
-                        //Remove 
+                        //Remove the item from the arraylist and from the listview display
                         public void onClick(DialogInterface dialog, int which) {
                             entries.remove(positionToRemove);
                             arrayAdapter.notifyDataSetChanged();

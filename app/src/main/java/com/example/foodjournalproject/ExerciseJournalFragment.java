@@ -64,7 +64,7 @@ public class ExerciseJournalFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_exercise_journal, container, false);
-        Button addExercise = (Button) v.findViewById(R.id.new_exercise);
+        FloatingActionButton addExercise = (FloatingActionButton) v.findViewById(R.id.exercise_fab);
 
         addExercise.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), ExerciseEntry.class);

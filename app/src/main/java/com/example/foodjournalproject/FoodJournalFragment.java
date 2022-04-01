@@ -144,19 +144,11 @@ public class FoodJournalFragment extends Fragment {
             TextView journalNotes = convertView.findViewById(R.id.notesTextView);
 
             //Now set the resources on the views
-            journalDate.setText(rDate.get(position));
-            journalBF.setText(rBreakfast.get(position));
-            journalLunch.setText(rLunch.get(position));
-            journalDin.setText(rDinner.get(position));
-            journalNotes.setText(rNotes.get(position));
-
-            //TESTING AGAIN
-            System.out.println("WE ARE IN THE FOOD ADAPTER");
-            System.out.println(rDate.get(position));
-            System.out.println(rBreakfast.get(position));
-            System.out.println(rLunch.get(position));
-            System.out.println(rDinner.get(position));
-            System.out.println(rNotes.get(position));
+            journalDate.setText("Date: " + rDate.get(position));
+            journalBF.setText("Breakfast: "+rBreakfast.get(position));
+            journalLunch.setText("Lunch: "+rLunch.get(position));
+            journalDin.setText("Dinner: "+rDinner.get(position));
+            journalNotes.setText("Notes: "+rNotes.get(position));
 
 
             return super.getView(position, convertView, parent);
