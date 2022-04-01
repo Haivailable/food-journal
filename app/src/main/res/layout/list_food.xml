@@ -29,6 +29,8 @@
                 android:id="@+id/breakfastTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
                 android:layout_marginTop="5dp"
                 android:text="Breakfast: food"/>
 
@@ -36,6 +38,8 @@
                 android:id="@+id/lunchTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
                 android:layout_marginTop="5dp"
                 android:text="Lunch: food"/>
 
@@ -43,6 +47,8 @@
                 android:id="@+id/dinnerTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
                 android:layout_marginTop="5dp"
                 android:text="Dinner: food"/>
 
@@ -50,6 +56,8 @@
                 android:id="@+id/notesTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
                 android:layout_marginTop="5dp"
                 android:text="Notes: This is a note"/>
 

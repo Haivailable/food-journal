@@ -133,13 +133,15 @@ public class FoodJournalFragment extends Fragment {
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            LayoutInflater layoutInflater = (LayoutInflater)getActivity().getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row = layoutInflater.inflate(R.layout.list_food,parent,false);
-            TextView journalDate = row.findViewById(R.id.date);
-            TextView journalBF = row.findViewById(R.id.breakfastTextView);
-            TextView journalLunch = row.findViewById(R.id.lunchTextView);
-            TextView journalDin = row.findViewById(R.id.dinnerTextView);
-            TextView journalNotes = row.findViewById(R.id.notesTextView);
+            if(convertView == null){
+                convertView = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.list_food,parent,false);
+            }
+
+            TextView journalDate = convertView.findViewById(R.id.date);
+            TextView journalBF = convertView.findViewById(R.id.breakfastTextView);
+            TextView journalLunch = convertView.findViewById(R.id.lunchTextView);
+            TextView journalDin = convertView.findViewById(R.id.dinnerTextView);
+            TextView journalNotes = convertView.findViewById(R.id.notesTextView);
 
             //Now set the resources on the views
             journalDate.setText(rDate.get(position));
