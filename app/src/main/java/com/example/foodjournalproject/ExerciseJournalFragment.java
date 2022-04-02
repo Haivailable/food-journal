@@ -71,6 +71,23 @@ public class ExerciseJournalFragment extends Fragment {
             startActivity(intent);
         });
 
+<<<<<<< HEAD
+=======
+        //create a listview and add entry info to respective Arraylists
+        listView = (ListView) v.findViewById(R.id.exerciseJournalListView);
+        for (int i = 0; i<ExerciseEntry.exerciseJournal.size();i++){
+            dates.add(ExerciseEntry.exerciseJournal.get(i).getDate());
+            exerciseList.add(ExerciseEntry.exerciseJournal.get(i).getExercise());
+            setsList.add(ExerciseEntry.exerciseJournal.get(i).getSets());
+            repsList.add(ExerciseEntry.exerciseJournal.get(i).getReps());
+            allNotes.add(ExerciseEntry.exerciseJournal.get(i).getNotes());
+        }
+
+        //Define Adapter and set it
+        ExerciseAdapter exerciseAdapter = new ExerciseAdapter(getActivity(), dates,exerciseList,setsList,repsList,allNotes);
+        listView.setAdapter(exerciseAdapter);
+
+>>>>>>> 5853b86437a1fdd601ef712d79eae75ec3024d94
         return v;
     }
 }
