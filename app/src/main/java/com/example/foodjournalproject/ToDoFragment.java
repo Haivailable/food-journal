@@ -1,5 +1,7 @@
 package com.example.foodjournalproject;
 
+import static com.example.foodjournalproject.MainActivity.entries;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -65,8 +67,8 @@ public class ToDoFragment extends Fragment {
         }
     }
 
-    //Create an arraylist to store entries and find the buttons and textbox in display
-    ArrayList<String> entries = new ArrayList<>();
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -77,7 +79,9 @@ public class ToDoFragment extends Fragment {
         EditText text_edit = (EditText) v.findViewById(R.id.text_edit);
         ListView list = (ListView) v.findViewById(R.id.listview);
 
-
+        //This will add the user's input into the listview below it
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, entries);
+        list.setAdapter(arrayAdapter);
 
         //this is when the button is clicked on task_layout.xml
         clickButton.setOnClickListener(new View.OnClickListener() {
@@ -85,14 +89,10 @@ public class ToDoFragment extends Fragment {
             public void onClick(View view) {
                 //This adds the user's input into the textbox into an arraylist when the button is hit
                 String entry = text_edit.getText().toString();
-                text_edit.setVisibility(View.VISIBLE);
                 entries.add(entry);
-                System.out.println(entries.toString());
-                text_edit.setText("");
+                text_edit.setText(""); //makes the text box blank
 
-                //This will add the user's input into the listview below it
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, entries);
-                list.setAdapter(arrayAdapter);
+                arrayAdapter.notifyDataSetChanged();
 
                 //This is a method created in order to delete items from list and arraylist
             list.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -18,6 +18,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity{
 
     ActivityMainBinding binding;
+    //Create an arraylist to store entries and find the buttons and textbox in display
+    public static ArrayList<String> entries = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -122,6 +122,7 @@ public class FoodJournalFragment extends Fragment {
                     @Override
                     //Remove the item from the arraylist and from the listview display
                     public void onClick(DialogInterface dialog, int which) {
+                        FoodJournalEntry.foodJournal.remove(positionToRemove);
                         dates.remove(positionToRemove);
                         System.out.println(dates); //testing rn
                         breakfasts.remove(positionToRemove);
