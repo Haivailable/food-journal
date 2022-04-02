@@ -1,6 +1,8 @@
 package com.example.foodjournalproject;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -11,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -102,6 +105,31 @@ public class ExerciseJournalFragment extends Fragment {
         //Define Adapter and set it
         ExerciseAdapter adapter = new ExerciseAdapter(getActivity(), dates,exerciseList,setsList,repsList,allNotes);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+                AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
+                adb.setTitle("Delete?");
+                adb.setMessage("Are you sure you want to delete");
+                final int positionToRemove = position;
+                adb.setNegativeButton("Cancel", null);
+                adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    //Remove the item from the arraylist and from the listview display
+                    public void onClick(DialogInterface dialog, int which) {
+                        ExerciseEntry.exerciseJournal.remove(positionToRemove);
+                        dates.remove(positionToRemove);
+                        exerciseList.remove(positionToRemove);
+                        setsList.remove(positionToRemove);
+                        repsList.remove(positionToRemove);
+                        allNotes.remove(positionToRemove);
+                        adapter.notifyDataSetChanged();
+                    }});
+                adb.show();
+
+            }
+        });
 
         return v;
     }
