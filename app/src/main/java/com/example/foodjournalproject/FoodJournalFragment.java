@@ -89,6 +89,7 @@ public class FoodJournalFragment extends Fragment {
         fab.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), FoodJournalEntry.class);
             startActivity(intent);
+            getActivity().finish();
         });
 
         //create a listview and add entry info to respective Arraylists
