@@ -100,8 +100,8 @@ public class ExerciseJournalFragment extends Fragment {
         }
 
         //Define Adapter and set it
-        ExerciseAdapter adapter = new ExerciseAdapter(getActivity(), dates,exerciseList,setsList,repsList,allNotes);
-        listView.setAdapter(adapter);
+        ExerciseAdapter exerciseAdapter = new ExerciseAdapter(getActivity(), dates,exerciseList,setsList,repsList,allNotes);
+        listView.setAdapter(exerciseAdapter);
 
         return v;
     }

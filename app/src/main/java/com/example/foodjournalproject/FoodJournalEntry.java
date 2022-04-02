@@ -44,6 +44,7 @@ public class FoodJournalEntry extends AppCompatActivity
             {
                 //CODE TO CREATE OBJECTS
                 newFoodJournal = new FoodJournalNotes(date.getText().toString(), breakfastText.getText().toString(),lunchText.getText().toString(),dinnerText.getText().toString(),userNotes.getText().toString());
+
                 foodJournal.add(newFoodJournal);
                 //finish activity
                 startActivity(new Intent(FoodJournalEntry.this, MainActivity.class));

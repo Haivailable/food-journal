@@ -65,16 +65,20 @@ public class ToDoFragment extends Fragment {
         }
     }
 
+    //Create an arraylist to store entries and find the buttons and textbox in display
+    ArrayList<String> entries = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.task_layout, container, false);
-        //Create an arraylist to store entries and find the buttons and textbox in display
-        ArrayList<String> entries = new ArrayList<>();
+
         Button clickButton = (Button) v.findViewById(R.id.add_item);
         EditText text_edit = (EditText) v.findViewById(R.id.text_edit);
         ListView list = (ListView) v.findViewById(R.id.listview);
+
+
+
         //this is when the button is clicked on task_layout.xml
         clickButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,9 +89,11 @@ public class ToDoFragment extends Fragment {
                 entries.add(entry);
                 System.out.println(entries.toString());
                 text_edit.setText("");
+
                 //This will add the user's input into the listview below it
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, entries);
                 list.setAdapter(arrayAdapter);
+
                 //This is a method created in order to delete items from list and arraylist
             list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override

@@ -1,6 +1,8 @@
 package com.example.foodjournalproject;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -101,10 +104,37 @@ public class FoodJournalFragment extends Fragment {
             dinners.add(FoodJournalEntry.foodJournal.get(i).getdText());
             allNotes.add(FoodJournalEntry.foodJournal.get(i).getnText());
         }
+        //testing stuff rn
+        System.out.println(dates);
 
         //Define Adapter and set it
         FoodAdapter adapter = new FoodAdapter(getActivity(), dates,breakfasts,lunches,dinners,allNotes);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+                AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
+                adb.setTitle("Delete?");
+                adb.setMessage("Are you sure you want to delete");
+                final int positionToRemove = position;
+                adb.setNegativeButton("Cancel", null);
+                adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    //Remove the item from the arraylist and from the listview display
+                    public void onClick(DialogInterface dialog, int which) {
+                        dates.remove(positionToRemove);
+                        System.out.println(dates); //testing rn
+                        breakfasts.remove(positionToRemove);
+                        lunches.remove(positionToRemove);
+                        dinners.remove(positionToRemove);
+                        allNotes.remove(positionToRemove);
+                        adapter.notifyDataSetChanged();
+                    }});
+                adb.show();
+
+            }
+        });
 
         return v;
     }
@@ -151,5 +181,7 @@ public class FoodJournalFragment extends Fragment {
 
             return super.getView(position, convertView, parent);
         }
+
+
     }
 }
