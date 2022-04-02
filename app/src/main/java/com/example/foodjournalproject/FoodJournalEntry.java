@@ -47,7 +47,6 @@ public class FoodJournalEntry extends AppCompatActivity
                 foodJournal.add(newFoodJournal);
                 //finish activity
                 startActivity(new Intent(FoodJournalEntry.this, MainActivity.class));
-                ExerciseEntry.whichPage = false;
                 finish();
             }
         });

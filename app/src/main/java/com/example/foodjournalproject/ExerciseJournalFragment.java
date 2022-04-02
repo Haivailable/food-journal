@@ -1,24 +1,16 @@
 package com.example.foodjournalproject;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -67,15 +59,6 @@ public class ExerciseJournalFragment extends Fragment {
         }
     }
 
-
-    //Arraylists that will be necessary
-    ListView listView;
-    ArrayList<String> dates = new ArrayList<>();
-    ArrayList<String> exerciseList = new ArrayList<>();
-    ArrayList<String> setsList = new ArrayList<>();
-    ArrayList<String> repsList = new ArrayList<>();
-    ArrayList<String> allNotes = new ArrayList<>();
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -86,68 +69,8 @@ public class ExerciseJournalFragment extends Fragment {
         addExercise.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), ExerciseEntry.class);
             startActivity(intent);
-            getActivity().finish();
         });
-
-        //create a listview and add entry info to respective Arraylists
-        listView = (ListView) v.findViewById(R.id.exerciseJournalListView);
-        for (int i = 0; i<ExerciseEntry.exerciseJournal.size();i++){
-            dates.add(ExerciseEntry.exerciseJournal.get(i).getDate());
-            exerciseList.add(ExerciseEntry.exerciseJournal.get(i).getExercise());
-            setsList.add(ExerciseEntry.exerciseJournal.get(i).getSets());
-            repsList.add(ExerciseEntry.exerciseJournal.get(i).getReps());
-            allNotes.add(ExerciseEntry.exerciseJournal.get(i).getNotes());
-        }
-
-        //Define Adapter and set it
-        ExerciseAdapter adapter = new ExerciseAdapter(getActivity(), dates,exerciseList,setsList,repsList,allNotes);
-        listView.setAdapter(adapter);
 
         return v;
     }
-
-    //Create an adapter that correctly displays string information onto the listview
-    class ExerciseAdapter extends ArrayAdapter<String> {
-        Context context;
-        ArrayList<String> rDate;
-        ArrayList<String> rExercise;
-        ArrayList<String> rSets;
-        ArrayList<String> rReps;
-        ArrayList<String> rNotes;
-
-        ExerciseAdapter (Context c, ArrayList<String> date, ArrayList<String> exerciseList, ArrayList<String> setsList, ArrayList<String> repsList, ArrayList<String> notes){
-            super(c, R.layout.list_exercise, R.id.date2, date);
-            this.context=c;
-            this.rDate=date;
-            this.rExercise=exerciseList;
-            this.rSets=setsList;
-            this.rReps=repsList;
-            this.rNotes=notes;
-        }
-
-        @NonNull
-        @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            if(convertView == null){
-                convertView = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.list_exercise,parent,false);
-            }
-
-            TextView eJournalDate = convertView.findViewById(R.id.date2);
-            TextView eJournalExercise = convertView.findViewById(R.id.exerciseTextView);
-            TextView eJournalSets = convertView.findViewById(R.id.setsTextView);
-            TextView eJournalReps = convertView.findViewById(R.id.repsTextView);
-            TextView eJournalNotes = convertView.findViewById(R.id.notesTextView2);
-
-            //Now set the resources on the views
-            eJournalDate.setText("Date: " + rDate.get(position));
-            eJournalExercise.setText("Exercise: "+rExercise.get(position));
-            eJournalSets.setText("Sets: "+rSets.get(position));
-            eJournalReps.setText("Reps: "+rReps.get(position));
-            eJournalNotes.setText("Notes: "+rNotes.get(position));
-
-
-            return super.getView(position, convertView, parent);
-        }
-    }
-
 }
