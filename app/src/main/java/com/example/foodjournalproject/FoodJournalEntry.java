@@ -20,8 +20,8 @@ public class FoodJournalEntry extends AppCompatActivity
     private EditText dinnerText;
     private EditText userNotes;
     private Button backNSave;
-    public static ArrayList<FoodJournalNotes> journal = new ArrayList<FoodJournalNotes>();
-    private FoodJournalNotes newJournal;
+    public static ArrayList<FoodJournalNotes> foodJournal = new ArrayList<FoodJournalNotes>();
+    private FoodJournalNotes newFoodJournal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -42,9 +42,9 @@ public class FoodJournalEntry extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                //OTHER CODE TO CREATE OBJECTS
-                newJournal = new FoodJournalNotes(date.getText().toString(), breakfastText.getText().toString(),lunchText.getText().toString(),dinnerText.getText().toString(),userNotes.getText().toString());
-                journal.add(newJournal);
+                //CODE TO CREATE OBJECTS
+                newFoodJournal = new FoodJournalNotes(date.getText().toString(), breakfastText.getText().toString(),lunchText.getText().toString(),dinnerText.getText().toString(),userNotes.getText().toString());
+                foodJournal.add(newFoodJournal);
                 //finish activity
                 startActivity(new Intent(FoodJournalEntry.this, MainActivity.class));
                 finish();

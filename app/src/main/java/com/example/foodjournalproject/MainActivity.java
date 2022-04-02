@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity{
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new FoodJournalFragment());
+
+        //switch case for which fragment to open when button navigation bar is clicked
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch(item.getItemId()){
                 case(R.id.food_journal):
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
+    //method that switches fragments
     private void replaceFragment (Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

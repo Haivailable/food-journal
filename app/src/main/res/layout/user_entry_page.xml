@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/dateTextView"
+        android:id="@+id/dateHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -23,7 +23,7 @@
         android:layout_marginStart="8dp"
         android:hint="dd/mm/yyyy"
         android:inputType="date"
-        app:layout_constraintTop_toBottomOf="@+id/dateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/dateHeader"
         tools:layout_editor_absoluteX="8dp" />
 
     <TextView

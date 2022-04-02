@@ -85,33 +85,30 @@ public class FoodJournalFragment extends Fragment {
         View v = inflater.inflate(R.layout.homepage, container, false);
         FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
 
+        //when button is clicked, open entry page
         fab.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), FoodJournalEntry.class);
             startActivity(intent);
         });
 
+        //create a listview and add entry info to respective Arraylists
         listView = (ListView) v.findViewById(R.id.journalListView);
-        for (int i = 0; i<FoodJournalEntry.journal.size();i++){
-            dates.add(FoodJournalEntry.journal.get(i).getDate());
-            breakfasts.add(FoodJournalEntry.journal.get(i).getBfText());
-            lunches.add(FoodJournalEntry.journal.get(i).getlText());
-            dinners.add(FoodJournalEntry.journal.get(i).getdText());
-            allNotes.add(FoodJournalEntry.journal.get(i).getnText());
+        for (int i = 0; i<FoodJournalEntry.foodJournal.size();i++){
+            dates.add(FoodJournalEntry.foodJournal.get(i).getDate());
+            breakfasts.add(FoodJournalEntry.foodJournal.get(i).getBfText());
+            lunches.add(FoodJournalEntry.foodJournal.get(i).getlText());
+            dinners.add(FoodJournalEntry.foodJournal.get(i).getdText());
+            allNotes.add(FoodJournalEntry.foodJournal.get(i).getnText());
         }
-        //TESTING STUFF RN
-        System.out.println("WE ARE IN THE FRAGMENT");
-        System.out.println(dates);
-        System.out.println(breakfasts);
-        System.out.println(lunches);
-        System.out.println(dinners);
-        System.out.println(allNotes);
 
+        //Define Adapter and set it
         FoodAdapter adapter = new FoodAdapter(getActivity(), dates,breakfasts,lunches,dinners,allNotes);
         listView.setAdapter(adapter);
 
         return v;
     }
 
+    //Create an adapter that correctly displays string information onto the listview
     class FoodAdapter extends ArrayAdapter<String>{
         Context context;
         ArrayList<String> rDate;

@@ -16,7 +16,7 @@ public class PasscodeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_passcode);
         passcodeView = findViewById(R.id.passcodeView);
         passcodeView.setPasscodeLength(4)
-                .setLocalPasscode("5237")
+                .setLocalPasscode("5237") //sets the passcode
                 .setListener(new PasscodeView.PasscodeViewListener() {
                     @Override
                     public void onFail() {
@@ -25,6 +25,7 @@ public class PasscodeActivity extends AppCompatActivity {
 
                     @Override
                     public void onSuccess(String number) {
+                        //ends passcode activity and starts the MainActivity
                         startActivity(new Intent(PasscodeActivity.this, MainActivity.class));
                         finish();
                     }
