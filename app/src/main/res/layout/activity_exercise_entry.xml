@@ -7,7 +7,7 @@
 
 
     <Button
-        android:id="@+id/backButton_UserEntryPage"
+        android:id="@+id/backButton_ExerciseEntryPage"
         android:layout_width="107dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
@@ -17,13 +17,34 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/dateHeader2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Date"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButton_ExerciseEntryPage" />
+
+    <EditText
+        android:id="@+id/dateinput2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="dd/mm/yyyy"
+        android:inputType="date"
+        app:layout_constraintTop_toBottomOf="@+id/dateHeader2"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <TextView
         android:id="@+id/exerciseTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Exercise"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backButton_UserEntryPage" />
+        app:layout_constraintTop_toBottomOf="@+id/dateinput2" />
 
     <EditText
         android:id="@+id/exMultiLineText"
@@ -93,7 +114,7 @@
         app:layout_constraintTop_toBottomOf="@+id/repsMultiLineText" />
 
     <EditText
-        android:id="@+id/nMultiLineText"
+        android:id="@+id/nMultiLineText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
