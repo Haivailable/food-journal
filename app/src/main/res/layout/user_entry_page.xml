@@ -20,11 +20,10 @@
         android:id="@+id/dateinput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:hint="dd/mm/yyyy"
         android:inputType="date"
-        app:layout_constraintTop_toBottomOf="@+id/dateHeader"
-        tools:layout_editor_absoluteX="8dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateHeader" />
 
     <TextView
         android:id="@+id/breakfastTextView"
@@ -145,7 +144,8 @@
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:text="@string/backButton_uentrypage"
+        android:text="Enter"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
